@@ -9,9 +9,11 @@ Test this function by hand in the console to get it working, and when you think 
 
 // Write your code here
 function sum(a, b) { //eslint-disable-line
-  var sumOfNumbers = a + b;
-  var stringOfSum = 'The sum of ' + a + ' and ' + b + ' is ' + sumOfNumbers + '.';
-  var result = [sumOfNumbers, stringOfSum];
+  var result =[]; //declared a result in an array 
+  result.push(a + b); //added a + b to array (which would sit at index 0
+  // added the string to the results array, which would sit at index 1
+  // Because the last part of the string is what I calculated and pushed above, using index 0 gets it from  the array
+  result.push('The sum of ' + a + ' and ' + b + ' is ' + result[0] + '.')
   return result;
 }
 

@@ -126,7 +126,7 @@ function multiplyArray(multArr) { //eslint-disable-line
       var number = multArr[i];
       product = multiply(product,number)[0];
       string += number + ',';  
-    }
+    } //always gonna use a for loop with an array because it could be any length
   // slice method removed the last comma from the string//passing in where we want to start and end
     string =  'The numbers ' + string.slice(0,-1) + ' have a product of ' + product + '.'
     var result = [product, string];
@@ -159,10 +159,11 @@ Test this function by hand in the console to get it working, and when you think 
 var testDynamicArray = [1,2,3,4,5]; //eslint-disable-line
 
 function multiplyAnyArray(dynamicArray) { //eslint-disable-line
+ return multiplyArray(dynamicArray);
 
 }
 
 // Here is the test for multiplyArray(); uncomment it to run it
-// testMultiplyAnyArray(testDynamicArray);
+testMultiplyAnyArray(testDynamicArray);
 
 // Once you get the test passing, do an a-c-p cycle and synchronize the code between GitHub and your laptop. You're done! Submit the link to the repo following the instructions in Canvas.

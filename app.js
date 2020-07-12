@@ -92,8 +92,8 @@ function sumArray(sumArr) { //eslint-disable-line
   var string = '';
   for (var i = 0; i < sumArr.length; i++ ) {
     var number = sumArr[i];
-    sumOfNumbers += number; //sumOfNumbers will be sum of numbers in array
-    string += number + ','; 
+    sumOfNumbers = sum(sumOfNumbers, number)[0]; //sumOfNumbers will be sum of numbers in array //
+    string += number + ',';                     // take the zero index to get the number of the sum array
   }
 // slice method removed the last comma from the string//passing in where we want to start and end
   string = string.slice(0,-1) + ' was passed in as an array of numbers, and ' + sumOfNumbers + ' is their sum.';
@@ -120,11 +120,22 @@ Test this function by hand in the console to get it working, and when you think 
 
 // Write your code here
 function multiplyArray(multArr) { //eslint-disable-line
-
+    var product = 1;
+    var string = '';
+    for (var i = 0; i < multArr.length; i++ ) {
+      var number = multArr[i];
+      product = multiply(product,number)[0];
+      string += number + ',';  
+    }
+  // slice method removed the last comma from the string//passing in where we want to start and end
+    string =  'The numbers ' + string.slice(0,-1) + ' have a product of ' + product + '.'
+    var result = [product, string];
+    return result;
+    
 }
 
 // Here is the test for multiplyArray(); uncomment it to run it
-// testMultiplyArray(testArray);
+testMultiplyArray(testArray);
 
 // Once you get the test passing, do an a-c-p cycle and synchronize the code between GitHub and your laptop. 
 
